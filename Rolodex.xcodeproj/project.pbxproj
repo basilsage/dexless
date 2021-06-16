@@ -3,27 +3,59 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		22BF6CB4244005790083DEE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF6CB3244005790083DEE1 /* AppDelegate.swift */; };
 		22BF6CB6244005790083DEE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF6CB5244005790083DEE1 /* SceneDelegate.swift */; };
-		22BF6CB8244005790083DEE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF6CB7244005790083DEE1 /* ViewController.swift */; };
-		22BF6CBB244005790083DEE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22BF6CB9244005790083DEE1 /* Main.storyboard */; };
+		22BF6CB8244005790083DEE1 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF6CB7244005790083DEE1 /* ContactsViewController.swift */; };
 		22BF6CBD2440057C0083DEE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22BF6CBC2440057C0083DEE1 /* Assets.xcassets */; };
 		22BF6CC02440057C0083DEE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22BF6CBE2440057C0083DEE1 /* LaunchScreen.storyboard */; };
+		22BF6CC8244007360083DEE1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22BF6CC7244007360083DEE1 /* GoogleService-Info.plist */; };
+		22BF6CCA24400D730083DEE1 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF6CC924400D730083DEE1 /* Contact.swift */; };
+		22BF6CCE24400EB60083DEE1 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF6CCD24400EB60083DEE1 /* LoginController.swift */; };
+		22BF6CD024400ECE0083DEE1 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF6CCF24400ECE0083DEE1 /* SignUpController.swift */; };
+		22BF6CD224400EFA0083DEE1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF6CD124400EFA0083DEE1 /* Extensions.swift */; };
+		22BF6CD4244015B90083DEE1 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF6CD3244015B90083DEE1 /* Note.swift */; };
+		22BF6CD624401A1B0083DEE1 /* ContactDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF6CD524401A1B0083DEE1 /* ContactDetailController.swift */; };
+		22BF6CD824401F160083DEE1 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF6CD724401F160083DEE1 /* NoteCell.swift */; };
+		22BF6CDA244039F80083DEE1 /* AddNoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF6CD9244039F80083DEE1 /* AddNoteController.swift */; };
+		22BF6CDC244047460083DEE1 /* EditNoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF6CDB244047460083DEE1 /* EditNoteController.swift */; };
+		879FFBE9266D5B5600A3AD7A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879FFBE8266D5B5600A3AD7A /* MainTabBarController.swift */; };
+		879FFBEC266D5C1900A3AD7A /* ExecutiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879FFBEB266D5C1900A3AD7A /* ExecutiveViewController.swift */; };
+		879FFBEE266DA07900A3AD7A /* RemindersHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879FFBED266DA07900A3AD7A /* RemindersHeader.swift */; };
+		87B157142665EBCF00BFC8F5 /* ActionFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B157132665EBCF00BFC8F5 /* ActionFooter.swift */; };
+		87D1887B267464F000C8EAA3 /* ExecutiveViewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D1887A267464F000C8EAA3 /* ExecutiveViewTableCell.swift */; };
+		C6A8DDA731F93090349AAD06 /* Pods_Rolodex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA67ED9B124ECA10854B99A /* Pods_Rolodex.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		22BF6CB0244005790083DEE1 /* Rolodex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rolodex.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22BF6CB0244005790083DEE1 /* Dexless.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dexless.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22BF6CB3244005790083DEE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22BF6CB5244005790083DEE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		22BF6CB7244005790083DEE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		22BF6CBA244005790083DEE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		22BF6CB7244005790083DEE1 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		22BF6CBC2440057C0083DEE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22BF6CBF2440057C0083DEE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22BF6CC12440057C0083DEE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22BF6CC7244007360083DEE1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		22BF6CC924400D730083DEE1 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		22BF6CCD24400EB60083DEE1 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		22BF6CCF24400ECE0083DEE1 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		22BF6CD124400EFA0083DEE1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		22BF6CD3244015B90083DEE1 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		22BF6CD524401A1B0083DEE1 /* ContactDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailController.swift; sourceTree = "<group>"; };
+		22BF6CD724401F160083DEE1 /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		22BF6CD9244039F80083DEE1 /* AddNoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteController.swift; sourceTree = "<group>"; };
+		22BF6CDB244047460083DEE1 /* EditNoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteController.swift; sourceTree = "<group>"; };
+		3B4F8688BA610ACA784F254C /* Pods-Rolodex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rolodex.release.xcconfig"; path = "Target Support Files/Pods-Rolodex/Pods-Rolodex.release.xcconfig"; sourceTree = "<group>"; };
+		879FFBE8266D5B5600A3AD7A /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		879FFBEB266D5C1900A3AD7A /* ExecutiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutiveViewController.swift; sourceTree = "<group>"; };
+		879FFBED266DA07900A3AD7A /* RemindersHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersHeader.swift; sourceTree = "<group>"; };
+		87B157132665EBCF00BFC8F5 /* ActionFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionFooter.swift; sourceTree = "<group>"; };
+		87D1887A267464F000C8EAA3 /* ExecutiveViewTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutiveViewTableCell.swift; sourceTree = "<group>"; };
+		BAA67ED9B124ECA10854B99A /* Pods_Rolodex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rolodex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E280AD1BD3CD12EFE20178BA /* Pods-Rolodex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rolodex.debug.xcconfig"; path = "Target Support Files/Pods-Rolodex/Pods-Rolodex.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6A8DDA731F93090349AAD06 /* Pods_Rolodex.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,13 +75,15 @@
 			children = (
 				22BF6CB2244005790083DEE1 /* Rolodex */,
 				22BF6CB1244005790083DEE1 /* Products */,
+				6E22E39382472B63A872CE8D /* Pods */,
+				925AD3B811154EA4E950F3E2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		22BF6CB1244005790083DEE1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				22BF6CB0244005790083DEE1 /* Rolodex.app */,
+				22BF6CB0244005790083DEE1 /* Dexless.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,35 +91,124 @@
 		22BF6CB2244005790083DEE1 /* Rolodex */ = {
 			isa = PBXGroup;
 			children = (
-				22BF6CB3244005790083DEE1 /* AppDelegate.swift */,
-				22BF6CB5244005790083DEE1 /* SceneDelegate.swift */,
-				22BF6CB7244005790083DEE1 /* ViewController.swift */,
-				22BF6CB9244005790083DEE1 /* Main.storyboard */,
-				22BF6CBC2440057C0083DEE1 /* Assets.xcassets */,
-				22BF6CBE2440057C0083DEE1 /* LaunchScreen.storyboard */,
 				22BF6CC12440057C0083DEE1 /* Info.plist */,
+				22BF6CC7244007360083DEE1 /* GoogleService-Info.plist */,
+				22BF6CE024404B580083DEE1 /* Other */,
+				22BF6CDF24404B470083DEE1 /* Controllers */,
+				22BF6CDE24404B430083DEE1 /* View */,
+				22BF6CDD24404B3F0083DEE1 /* Model */,
 			);
 			path = Rolodex;
+			sourceTree = "<group>";
+		};
+		22BF6CDD24404B3F0083DEE1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				22BF6CC924400D730083DEE1 /* Contact.swift */,
+				22BF6CD3244015B90083DEE1 /* Note.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		22BF6CDE24404B430083DEE1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				22BF6CD724401F160083DEE1 /* NoteCell.swift */,
+				22BF6CBC2440057C0083DEE1 /* Assets.xcassets */,
+				22BF6CBE2440057C0083DEE1 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		22BF6CDF24404B470083DEE1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				879FFBE8266D5B5600A3AD7A /* MainTabBarController.swift */,
+				879FFBEA266D5C0200A3AD7A /* Executive Page */,
+				22BF6CE124404B6B0083DEE1 /* Authentication */,
+				22BF6CE224404B750083DEE1 /* Contact Manager */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		22BF6CE024404B580083DEE1 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				22BF6CD124400EFA0083DEE1 /* Extensions.swift */,
+				22BF6CB3244005790083DEE1 /* AppDelegate.swift */,
+				22BF6CB5244005790083DEE1 /* SceneDelegate.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		22BF6CE124404B6B0083DEE1 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				22BF6CCD24400EB60083DEE1 /* LoginController.swift */,
+				22BF6CCF24400ECE0083DEE1 /* SignUpController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		22BF6CE224404B750083DEE1 /* Contact Manager */ = {
+			isa = PBXGroup;
+			children = (
+				22BF6CB7244005790083DEE1 /* ContactsViewController.swift */,
+				22BF6CD524401A1B0083DEE1 /* ContactDetailController.swift */,
+				22BF6CD9244039F80083DEE1 /* AddNoteController.swift */,
+				22BF6CDB244047460083DEE1 /* EditNoteController.swift */,
+				87B157132665EBCF00BFC8F5 /* ActionFooter.swift */,
+				879FFBED266DA07900A3AD7A /* RemindersHeader.swift */,
+			);
+			path = "Contact Manager";
+			sourceTree = "<group>";
+		};
+		6E22E39382472B63A872CE8D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E280AD1BD3CD12EFE20178BA /* Pods-Rolodex.debug.xcconfig */,
+				3B4F8688BA610ACA784F254C /* Pods-Rolodex.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		879FFBEA266D5C0200A3AD7A /* Executive Page */ = {
+			isa = PBXGroup;
+			children = (
+				879FFBEB266D5C1900A3AD7A /* ExecutiveViewController.swift */,
+				87D1887A267464F000C8EAA3 /* ExecutiveViewTableCell.swift */,
+			);
+			path = "Executive Page";
+			sourceTree = "<group>";
+		};
+		925AD3B811154EA4E950F3E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BAA67ED9B124ECA10854B99A /* Pods_Rolodex.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		22BF6CAF244005790083DEE1 /* Rolodex */ = {
+		22BF6CAF244005790083DEE1 /* Dexless */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 22BF6CC42440057C0083DEE1 /* Build configuration list for PBXNativeTarget "Rolodex" */;
+			buildConfigurationList = 22BF6CC42440057C0083DEE1 /* Build configuration list for PBXNativeTarget "Dexless" */;
 			buildPhases = (
+				FC59B079E085FD767CAE2036 /* [CP] Check Pods Manifest.lock */,
 				22BF6CAC244005790083DEE1 /* Sources */,
 				22BF6CAD244005790083DEE1 /* Frameworks */,
 				22BF6CAE244005790083DEE1 /* Resources */,
+				222513D0B54592669AF0F195 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Rolodex;
+			name = Dexless;
 			productName = Rolodex;
-			productReference = 22BF6CB0244005790083DEE1 /* Rolodex.app */;
+			productReference = 22BF6CB0244005790083DEE1 /* Dexless.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -115,7 +239,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				22BF6CAF244005790083DEE1 /* Rolodex */,
+				22BF6CAF244005790083DEE1 /* Dexless */,
 			);
 		};
 /* End PBXProject section */
@@ -126,20 +250,76 @@
 			buildActionMask = 2147483647;
 			files = (
 				22BF6CC02440057C0083DEE1 /* LaunchScreen.storyboard in Resources */,
+				22BF6CC8244007360083DEE1 /* GoogleService-Info.plist in Resources */,
 				22BF6CBD2440057C0083DEE1 /* Assets.xcassets in Resources */,
-				22BF6CBB244005790083DEE1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		222513D0B54592669AF0F195 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rolodex/Pods-Rolodex-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rolodex/Pods-Rolodex-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rolodex/Pods-Rolodex-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC59B079E085FD767CAE2036 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Rolodex-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		22BF6CAC244005790083DEE1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22BF6CB8244005790083DEE1 /* ViewController.swift in Sources */,
+				22BF6CCA24400D730083DEE1 /* Contact.swift in Sources */,
+				22BF6CCE24400EB60083DEE1 /* LoginController.swift in Sources */,
+				879FFBEE266DA07900A3AD7A /* RemindersHeader.swift in Sources */,
+				22BF6CD024400ECE0083DEE1 /* SignUpController.swift in Sources */,
+				22BF6CDA244039F80083DEE1 /* AddNoteController.swift in Sources */,
+				22BF6CD224400EFA0083DEE1 /* Extensions.swift in Sources */,
+				22BF6CB8244005790083DEE1 /* ContactsViewController.swift in Sources */,
+				22BF6CD4244015B90083DEE1 /* Note.swift in Sources */,
+				22BF6CDC244047460083DEE1 /* EditNoteController.swift in Sources */,
+				87B157142665EBCF00BFC8F5 /* ActionFooter.swift in Sources */,
 				22BF6CB4244005790083DEE1 /* AppDelegate.swift in Sources */,
+				879FFBE9266D5B5600A3AD7A /* MainTabBarController.swift in Sources */,
+				22BF6CD824401F160083DEE1 /* NoteCell.swift in Sources */,
+				879FFBEC266D5C1900A3AD7A /* ExecutiveViewController.swift in Sources */,
+				87D1887B267464F000C8EAA3 /* ExecutiveViewTableCell.swift in Sources */,
+				22BF6CD624401A1B0083DEE1 /* ContactDetailController.swift in Sources */,
 				22BF6CB6244005790083DEE1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +327,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		22BF6CB9244005790083DEE1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				22BF6CBA244005790083DEE1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		22BF6CBE2440057C0083DEE1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -282,6 +454,7 @@
 		};
 		22BF6CC52440057C0083DEE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E280AD1BD3CD12EFE20178BA /* Pods-Rolodex.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -291,15 +464,16 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.djsatoda.Rolodex;
+				PRODUCT_BUNDLE_IDENTIFIER = com.djsatoda.PersonalCRM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		22BF6CC62440057C0083DEE1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B4F8688BA610ACA784F254C /* Pods-Rolodex.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -309,10 +483,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.djsatoda.Rolodex;
+				PRODUCT_BUNDLE_IDENTIFIER = com.djsatoda.PersonalCRM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -328,7 +502,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		22BF6CC42440057C0083DEE1 /* Build configuration list for PBXNativeTarget "Rolodex" */ = {
+		22BF6CC42440057C0083DEE1 /* Build configuration list for PBXNativeTarget "Dexless" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22BF6CC52440057C0083DEE1 /* Debug */,
