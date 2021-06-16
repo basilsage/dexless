@@ -13,7 +13,7 @@ class SignUpController: UIViewController, UIImagePickerControllerDelegate, UINav
     
     let titleLabel: UILabel = {
         let tl = UILabel()
-        tl.text = "Rolodex"
+        tl.text = "Dexless"
         tl.font = UIFont.systemFont(ofSize: 50)
         tl.textAlignment = .center
         
