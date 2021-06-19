@@ -70,19 +70,57 @@ class ContactDetailController: UITableViewController, SwipeTableViewCellDelegate
 //        pickerView.setValue(UIColor.red, forKeyPath: "textColor")
         pickerView.setValue(UIColor.red, forKeyPath: "textColor")
 
-        
-//        pickerView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         pickerView.datePickerMode = .date
 //        pickerView.minimumDate = Date() - 365
         pickerView.locale = .current
         vc.view.addSubview(pickerView)
         let editRadiusAlert = UIAlertController(title: "Create reminder", message: "", preferredStyle: UIAlertController.Style.alert)
         editRadiusAlert.setValue(vc, forKey: "contentViewController")
-        editRadiusAlert.addAction(UIAlertAction(title: "Add", style: .default, handler: { (_) in
+        editRadiusAlert.addAction(UIAlertAction(title: "1 day", style: .default, handler: { (_) in
             print("submitted")
             print(pickerView.date)
             
+            let today = Date()
+            let modifiedDate = today.addingTimeInterval(60 * 60 * 24)
+            
+            let firebaseDate = modifiedDate.timeIntervalSince1970
+            
+            // Save to DB
+            self.saveReminderDate(submittedDate: firebaseDate)
+            
+            // Update label
+            let dateFormatter = DateFormatter()
+            // Convert Date to String
+            dateFormatter.dateFormat = "YY/MM/dd"
+            let enteredDate = dateFormatter.string(from: pickerView.date)
+            self.nextReminder = enteredDate
+            self.tableView.reloadData()
+        }))
+        
+        editRadiusAlert.addAction(UIAlertAction(title: "1 week", style: .default, handler: { (_) in
+            print("submitted")
+            print(pickerView.date)
+            
+            let today = Date()
+            let modifiedDate = today.addingTimeInterval(60 * 60 * 24 * 7)
+            
+            let firebaseDate = modifiedDate.timeIntervalSince1970
+            
+            // Save to DB
+            self.saveReminderDate(submittedDate: firebaseDate)
+            
+            // Update label
+            let dateFormatter = DateFormatter()
+            // Convert Date to String
+            dateFormatter.dateFormat = "YY/MM/dd"
+            let enteredDate = dateFormatter.string(from: pickerView.date)
+            self.nextReminder = enteredDate
+            self.tableView.reloadData()
+        }))
+        
+        editRadiusAlert.addAction(UIAlertAction(title: "Add Custom", style: .default, handler: { (_) in
             let firebaseDate = pickerView.date.timeIntervalSince1970
+            
             
             // Save to DB
             self.saveReminderDate(submittedDate: firebaseDate)
@@ -236,11 +274,7 @@ class ContactDetailController: UITableViewController, SwipeTableViewCellDelegate
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 150
     }
-    
-//    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        return 150
-//    }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let editNoteController = EditNoteController()
