@@ -91,8 +91,8 @@ class ContactDetailController: UITableViewController, SwipeTableViewCellDelegate
             // Update label
             let dateFormatter = DateFormatter()
             // Convert Date to String
-            dateFormatter.dateFormat = "YY/MM/dd"
-            let enteredDate = dateFormatter.string(from: pickerView.date)
+            dateFormatter.dateStyle = .medium
+            let enteredDate = dateFormatter.string(from: modifiedDate)
             self.nextReminder = enteredDate
             self.tableView.reloadData()
         }))
@@ -112,8 +112,9 @@ class ContactDetailController: UITableViewController, SwipeTableViewCellDelegate
             // Update label
             let dateFormatter = DateFormatter()
             // Convert Date to String
-            dateFormatter.dateFormat = "YY/MM/dd"
-            let enteredDate = dateFormatter.string(from: pickerView.date)
+//            dateFormatter.dateFormat = "YY/MM/dd"
+            dateFormatter.dateStyle = .medium
+            let enteredDate = dateFormatter.string(from: modifiedDate)
             self.nextReminder = enteredDate
             self.tableView.reloadData()
         }))
@@ -128,7 +129,8 @@ class ContactDetailController: UITableViewController, SwipeTableViewCellDelegate
             // Update label
             let dateFormatter = DateFormatter()
             // Convert Date to String
-            dateFormatter.dateFormat = "YY/MM/dd"
+//            dateFormatter.dateFormat = "YY/MM/dd"
+            dateFormatter.dateStyle = .medium
             let enteredDate = dateFormatter.string(from: pickerView.date)
             self.nextReminder = enteredDate
             self.tableView.reloadData()
