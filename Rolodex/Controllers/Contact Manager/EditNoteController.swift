@@ -64,7 +64,7 @@ class EditNoteController: UIViewController {
         super.viewDidLoad()
         
         view.addSubview(dateButton)
-        dateButton.anchor(top: topLayoutGuide.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 40)
+        dateButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 40)
         
         view.backgroundColor = .white
         
@@ -99,8 +99,6 @@ class EditNoteController: UIViewController {
     
     @objc func updateNote() {
         
-        print(selectedContact)
-        print(selectedNote)
         guard let noteText = noteTextView.text else { return }
         guard let uid = Auth.auth().currentUser?.uid else { return }
         guard let selectedContactId = selectedContact?.id else {return}

@@ -190,7 +190,6 @@ class ContactDetailController: UITableViewController, SwipeTableViewCellDelegate
                 self.tableView.reloadData()
                 return
             }
-            print("RD from within fetch: ", reminderDate)
             let nDate = NSDate(timeIntervalSince1970: reminderDate as! TimeInterval)
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .medium
@@ -220,7 +219,7 @@ class ContactDetailController: UITableViewController, SwipeTableViewCellDelegate
 
                 guard let dictionary = value as? [String: Any] else { return }
                 
-                let note = Note(id: key, dictionary: dictionary as! [String : Any])
+                let note = Note(id: key, dictionary: dictionary)
                 self.notes.append(note)
                 self.sortedNotes = self.notes.sorted(by: { $0.creationDate > $1.creationDate })
 

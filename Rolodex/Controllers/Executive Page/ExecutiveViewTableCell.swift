@@ -35,7 +35,6 @@ class ExecutiveViewTableCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        let frameHeight : CGFloat = UIScreen.main.bounds.height
         let frameWidth : CGFloat = UIScreen.main.bounds.width
         
         addSubview(nameLabel)

@@ -189,7 +189,7 @@ class ExecutiveViewController: UIViewController, UITableViewDataSource, UITableV
             dictionaries.forEach { (key, value) in
                 guard let dictionary = value as? [String: Any] else { return }
                
-                let contact = Contact(id: key, dictionary: dictionary as! [String : Any])
+                let contact = Contact(id: key, dictionary: dictionary)
                 self.contacts.append(contact)
                 
                 self.sortedContacts = self.contacts.sorted(by: { $0.reminderDate < $1.reminderDate })

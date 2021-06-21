@@ -24,12 +24,8 @@ class RemindersHeader : UITableViewHeaderFooterView {
             nextReminderLabel.text = "Next Reminder: \(reminderText)"
             
             if reminderText == "No reminder set" {
-                print("var nextReminder is not set")
-                print("NR in didSet: ", nextReminder)
                 self.reminderButton.isSelected   = false
             } else {
-                print("var nextReminder is set")
-                print("NR in didSet: ", nextReminder)
                 self.reminderButton.isSelected = true
                 
             }
