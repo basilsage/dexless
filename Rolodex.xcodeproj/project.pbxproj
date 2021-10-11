@@ -26,7 +26,6 @@
 		879FFBE9266D5B5600A3AD7A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879FFBE8266D5B5600A3AD7A /* MainTabBarController.swift */; };
 		879FFBEC266D5C1900A3AD7A /* ExecutiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879FFBEB266D5C1900A3AD7A /* ExecutiveViewController.swift */; };
 		879FFBEE266DA07900A3AD7A /* RemindersHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879FFBED266DA07900A3AD7A /* RemindersHeader.swift */; };
-		87B157142665EBCF00BFC8F5 /* ActionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B157132665EBCF00BFC8F5 /* ActionHeader.swift */; };
 		87D1887B267464F000C8EAA3 /* ExecutiveViewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D1887A267464F000C8EAA3 /* ExecutiveViewTableCell.swift */; };
 		F01947DD57AAC015063BB4B8 /* Pods_Dexless.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51CB327977E24985DAE66840 /* Pods_Dexless.framework */; };
 /* End PBXBuildFile section */
@@ -56,7 +55,6 @@
 		879FFBE8266D5B5600A3AD7A /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		879FFBEB266D5C1900A3AD7A /* ExecutiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutiveViewController.swift; sourceTree = "<group>"; };
 		879FFBED266DA07900A3AD7A /* RemindersHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersHeader.swift; sourceTree = "<group>"; };
-		87B157132665EBCF00BFC8F5 /* ActionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionHeader.swift; sourceTree = "<group>"; };
 		87D1887A267464F000C8EAA3 /* ExecutiveViewTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutiveViewTableCell.swift; sourceTree = "<group>"; };
 		884896D070576130B1FB0E5E /* Pods-Dexless.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dexless.release.xcconfig"; path = "Target Support Files/Pods-Dexless/Pods-Dexless.release.xcconfig"; sourceTree = "<group>"; };
 		E280AD1BD3CD12EFE20178BA /* Pods-Rolodex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rolodex.debug.xcconfig"; path = "Target Support Files/Pods-Rolodex/Pods-Rolodex.debug.xcconfig"; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 				22BF6CD524401A1B0083DEE1 /* ContactDetailController.swift */,
 				22BF6CD9244039F80083DEE1 /* AddNoteController.swift */,
 				22BF6CDB244047460083DEE1 /* EditNoteController.swift */,
-				87B157132665EBCF00BFC8F5 /* ActionHeader.swift */,
 				879FFBED266DA07900A3AD7A /* RemindersHeader.swift */,
 			);
 			path = "Contact Manager";
@@ -329,7 +326,6 @@
 				87913F4926F2E8C10062C57E /* Task.swift in Sources */,
 				22BF6CD4244015B90083DEE1 /* Note.swift in Sources */,
 				22BF6CDC244047460083DEE1 /* EditNoteController.swift in Sources */,
-				87B157142665EBCF00BFC8F5 /* ActionHeader.swift in Sources */,
 				22BF6CB4244005790083DEE1 /* AppDelegate.swift in Sources */,
 				879FFBE9266D5B5600A3AD7A /* MainTabBarController.swift in Sources */,
 				22BF6CD824401F160083DEE1 /* NoteCell.swift in Sources */,

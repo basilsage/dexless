@@ -12,7 +12,8 @@ import SwipeCellKit
 import AVFoundation
 
 // instead of using "No reminder set" as the key or password, make a boolean value nextReminderSet
-class ContactDetailController: UITableViewController, SwipeTableViewCellDelegate, ActionHeaderDelegate, RemindersHeaderDelegate {
+//class ContactDetailController: UITableViewController, SwipeTableViewCellDelegate, ActionHeaderDelegate, RemindersHeaderDelegate {
+class ContactDetailController: UITableViewController, SwipeTableViewCellDelegate, RemindersHeaderDelegate {
     
     let cellId = "cellId"
     let headerId = "headerId"

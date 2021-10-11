@@ -177,7 +177,7 @@ class ExecutiveViewController: UIViewController, UITableViewDataSource, UITableV
             }
             
             // If no reminders, then hide tableView to show completion message!
-            if self.sortedContacts.count == 5 {
+            if self.sortedContacts.count == 0 {
                 self.actionItemsTableView.isHidden = true
             } else {
                 self.actionItemsTableView.isHidden = false
