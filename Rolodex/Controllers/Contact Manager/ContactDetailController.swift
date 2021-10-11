@@ -28,7 +28,7 @@ class ContactDetailController: UITableViewController, SwipeTableViewCellDelegate
     }
     
     //MARK: ViewDidLoad / Appear
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {        
         fetchReminder()
         fetchNotes()
     }
@@ -68,13 +68,14 @@ class ContactDetailController: UITableViewController, SwipeTableViewCellDelegate
                 self.tableView.reloadData()
                 return
             }
+            print("RD: ", reminderDate)
             let nDate = NSDate(timeIntervalSince1970: reminderDate as! TimeInterval)
+            print("ND: ", nDate)
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .medium
             dateFormatter.timeStyle = .none
             
             let formattedDate = dateFormatter.string(from: nDate as Date)
-            
             self.nextReminder = formattedDate
             
             })
@@ -209,7 +210,11 @@ class ContactDetailController: UITableViewController, SwipeTableViewCellDelegate
         let ref = Database.database().reference().child("contactsAdded").child(uid).child(selectedContactId).child("notes")
         
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            guard let dictionaries = snapshot.value as? [String: Any] else { return }
+            guard let dictionaries = snapshot.value as? [String: Any] else {
+                // without this extra reload data, reminders don't load for Contacts with no notes saved. 
+                self.tableView.reloadData()
+                return
+            }
 
             dictionaries.forEach({ (key, value) in
 

@@ -129,6 +129,7 @@ class ExecutiveViewController: UIViewController, UITableViewDataSource, UITableV
         // Prepare ContactDetailController with selected contact
         let contactDetailController = ContactDetailController()
         contactDetailController.selectedContact = sortedContacts[indexPath.row]
+        print(contactDetailController.selectedContact)
 
         // Present ContactDetailController
         navigationController?.pushViewController(contactDetailController, animated: true)
