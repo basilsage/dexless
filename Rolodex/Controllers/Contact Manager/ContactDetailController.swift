@@ -68,9 +68,7 @@ class ContactDetailController: UITableViewController, SwipeTableViewCellDelegate
                 self.tableView.reloadData()
                 return
             }
-            print("RD: ", reminderDate)
             let nDate = NSDate(timeIntervalSince1970: reminderDate as! TimeInterval)
-            print("ND: ", nDate)
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .medium
             dateFormatter.timeStyle = .none
@@ -201,6 +199,9 @@ class ContactDetailController: UITableViewController, SwipeTableViewCellDelegate
     
     func fetchNotes() {
         
+        // Don't allow row selections while notes fetching (else crashes)
+        self.tableView.allowsSelection = false
+        
         notes.removeAll()
         sortedNotes.removeAll()
                 
@@ -231,6 +232,9 @@ class ContactDetailController: UITableViewController, SwipeTableViewCellDelegate
         }) { (err) in
             print("Failed to fetch notes:", err)
         }
+        
+        // re-enable row selections once notes finish fetching (else crashes)
+        self.tableView.allowsSelection = true
     }
 
     

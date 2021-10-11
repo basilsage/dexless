@@ -151,7 +151,10 @@ class ExecutiveViewController: UIViewController, UITableViewDataSource, UITableV
     var sortedContacts = [Contact]()
     
     func fetchActiveContacts() {
-                
+        
+        // Don't allow row selections while contacts fetching (else crashes)
+        self.actionItemsTableView.allowsSelection = false
+        
         // Clear arrays before re-populating
         contacts.removeAll()
         sortedContacts.removeAll()
@@ -186,6 +189,9 @@ class ExecutiveViewController: UIViewController, UITableViewDataSource, UITableV
             }
             
         }
+        
+        // Re-enable row selection once fetch is complete
+        self.actionItemsTableView.allowsSelection = true
     }
     
     
