@@ -15,10 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-//
-//        FirebaseApp.configure()
-//        window?.rootViewController = MainTabBarController()
-//
+
         if FirebaseApp.app() == nil {
             FirebaseApp.configure()
         }
@@ -27,7 +24,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.rootViewController = MainTabBarController()
-//        UINavigationController(rootViewController: MainTabBarController())
         window?.makeKeyAndVisible()
     }
 

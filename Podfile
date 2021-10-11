@@ -11,7 +11,5 @@ target 'Dexless' do
   pod 'Firebase/Storage'
   pod 'Firebase/Core'
   pod 'SwipeCellKit'
-  pod 'ShimmerSwift'
-  pod 'SkeletonView'
   
 end

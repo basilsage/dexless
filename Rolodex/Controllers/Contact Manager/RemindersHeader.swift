@@ -67,8 +67,7 @@ class RemindersHeader : UITableViewHeaderFooterView {
         
         
 
-    }
-    
+    }    
     
     lazy var completeButton : UIButton = {
         let raab = UIButton(type: .system)
@@ -102,10 +101,6 @@ class RemindersHeader : UITableViewHeaderFooterView {
         
         addSubview(nextReminderLabel)
         nextReminderLabel.anchor(top: reminderButton.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 50, paddingBottom: 0, paddingRight: 50, width: 0, height: 50)
-        
-//        addSubview(datePickerView)
-//        datePickerView.anchor(top: reminderButton.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
-        
 
     }
     

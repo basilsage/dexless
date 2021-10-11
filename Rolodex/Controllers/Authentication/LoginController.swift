@@ -11,6 +11,8 @@ import Firebase
 
 class LoginController: UIViewController {
     
+    //MARK: UI Elements
+    
     let titleLabel: UILabel = {
         let tl = UILabel()
         tl.text = "Dexless"
@@ -29,7 +31,6 @@ class LoginController: UIViewController {
         
         return tl
     }()
-    
     
     let emailTextField: UITextField = {
         let tf = UITextField()
@@ -66,10 +67,52 @@ class LoginController: UIViewController {
         return button
     }()
     
+    let dontHaveAccountButton: UIButton = {
+        let button = UIButton(type: .system)
+        
+        let attributedTitle = NSMutableAttributedString(string: "Don't have an account?  ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        
+        attributedTitle.append(NSAttributedString(string: "Sign Up", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: UIColor.rgb(red: 17, green: 154, blue: 237)
+            ]))
+        
+        button.setAttributedTitle(attributedTitle, for: .normal)
+        
+        button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
+        return button
+    }()
+
+
+    //MARK: UI Methods
+    
+    
+    fileprivate func setupInputFields() {
+        let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, loginButton])
+        
+        stackView.axis = .vertical
+        stackView.spacing = 10
+        stackView.distribution = .fillEqually
+        
+        view.addSubview(stackView)
+
+        stackView.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 40, paddingBottom: 0, paddingRight: 40, width: 0, height: 200)
+        
+    }
+    
+    @objc func handleShowSignUp() {
+        let signUpController = SignUpController()
+        navigationController?.pushViewController(signUpController, animated: true)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
-//
+    
+    //MARK: Firebase Methods
+    
     @objc func handleLogin() {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
@@ -116,28 +159,7 @@ class LoginController: UIViewController {
         })
     }
     
-    let dontHaveAccountButton: UIButton = {
-        let button = UIButton(type: .system)
-        
-        let attributedTitle = NSMutableAttributedString(string: "Don't have an account?  ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        
-        attributedTitle.append(NSAttributedString(string: "Sign Up", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: UIColor.rgb(red: 17, green: 154, blue: 237)
-            ]))
-        
-        button.setAttributedTitle(attributedTitle, for: .normal)
-        
-        button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
-        return button
-    }()
-    
-    @objc func handleShowSignUp() {
-        let signUpController = SignUpController()
-        navigationController?.pushViewController(signUpController, animated: true)
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
+    //MARK: ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -159,23 +181,6 @@ class LoginController: UIViewController {
         view.addGestureRecognizer(tap)
     }
     
-    fileprivate func setupInputFields() {
-        let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, loginButton])
-        
-        stackView.axis = .vertical
-        stackView.spacing = 10
-        stackView.distribution = .fillEqually
-        
-        view.addSubview(stackView)
-//        stackView.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 40, paddingLeft: 40, paddingBottom: 0, paddingRight: 40, width: 0, height: 140)
-//
-        stackView.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 40, paddingBottom: 0, paddingRight: 40, width: 0, height: 200)
-        
-        
-//        view.addSubview(messageLabel)
-//        messageLabel.backgroundColor = .orange
-//        messageLabel.anchor(top: titleLabel.bottomAnchor, left: stackView.leftAnchor, bottom: nil, right: stackView.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 30)
-    }
 }
 
 

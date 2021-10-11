@@ -15,7 +15,6 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Hello")
         self.delegate = self
         
         // If no user logged in, present Login Controller
@@ -24,30 +23,23 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
                 let loginController = LoginController()
                 let navController = UINavigationController(rootViewController: loginController)
                 navController.modalPresentationStyle = .fullScreen
-
                 self.present(navController, animated: true, completion: nil)
             }
             setupViewControllers()
-            print("dabba")
         }
-        print("abba")
         setupViewControllers()
         self.tabBar.tintColor = .black
     }
     
     //MARK: Setup View Controllers
     
+    // Initialize the two view controllers
     func setupViewControllers() {
-    
-        print("setupViewControllersFromSignup")
-        
-        // Initialize the three view controllers
-        
+                    
         let homeNavController = templateNavController(unselectedImage: UIImage(named: "contacts.png")!, selectedImage: UIImage(named: "contacts.png")!, rootViewController: ContactsViewController())
-        
         let executiveNavController = templateNavController(unselectedImage: UIImage(named: "checklist.png")!, selectedImage: UIImage(named: "checklist.png")!, rootViewController: ExecutiveViewController())
-        
         viewControllers = [executiveNavController, homeNavController]
+        
         //Center tab bar item insets
         guard let items = tabBar.items else { return }
         for item in items {
@@ -63,11 +55,5 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         navController.tabBarItem.selectedImage = selectedImage
         return navController
     }
-    
-    //MARK: Notifications
-
-
-
-    
     
 }

@@ -9,13 +9,15 @@
 import Foundation
 import UIKit
 
-protocol ActionFooterDelegate {
-    func footerAction()
+protocol ActionHeaderDelegate {
+    func headerAction()
 }
 
-class ActionFooter : UITableViewHeaderFooterView {
+class ActionHeader : UITableViewHeaderFooterView {
     
-    var delegate : ActionFooterDelegate?    
+    var delegate : ActionHeaderDelegate?
+    
+    //MARK: UI Elements
     
     var nextReminder: String? {
          didSet {
@@ -41,8 +43,7 @@ class ActionFooter : UITableViewHeaderFooterView {
     
     @objc func requestButtonPressed() {
         print("RAAB")
-        delegate?.footerAction()
-
+        delegate?.headerAction()
     }
     
     var datePickerView : UIDatePicker = {
@@ -55,10 +56,7 @@ class ActionFooter : UITableViewHeaderFooterView {
     override init(reuseIdentifier: String?) {
         
         super.init(reuseIdentifier: reuseIdentifier)
-        
-        
 
-        
         addSubview(reminderButton)
         
         reminderButton.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 50, paddingLeft: 20, paddingBottom: 50, paddingRight: 20, width: 0, height: 100)
@@ -66,10 +64,6 @@ class ActionFooter : UITableViewHeaderFooterView {
         
         addSubview(nextReminderLabel)
         nextReminderLabel.anchor(top: nil, left: leftAnchor, bottom: reminderButton.topAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
-        
-//        addSubview(datePickerView)
-//        datePickerView.anchor(top: reminderButton.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
-        
 
     }
     

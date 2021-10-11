@@ -107,8 +107,6 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - PromisesObjC (2.0.0)
-  - ShimmerSwift (2.1.1)
-  - SkeletonView (1.25.1)
   - SwipeCellKit (2.7.1)
 
 DEPENDENCIES:
@@ -116,8 +114,6 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
-  - ShimmerSwift
-  - SkeletonView
   - SwipeCellKit
 
 SPEC REPOS:
@@ -137,8 +133,6 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
-    - ShimmerSwift
-    - SkeletonView
     - SwipeCellKit
 
 SPEC CHECKSUMS:
@@ -157,10 +151,8 @@ SPEC CHECKSUMS:
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
-  ShimmerSwift: f7ed2daf9c246de8299dfd9e12c6ab465cba9842
-  SkeletonView: 77079530e1348a72f48b79ae30dcb966c1b18b6a
   SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
 
-PODFILE CHECKSUM: 9076bfad018ece936f6237d164206c1dd1e65678
+PODFILE CHECKSUM: fbca52401fa235c4f5340db73ce7b509aa0c2a68
 
 COCOAPODS: 1.11.2

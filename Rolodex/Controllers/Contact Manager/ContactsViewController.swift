@@ -16,8 +16,9 @@ class ContactsViewController: UITableViewController, SwipeTableViewCellDelegate 
     let cellId = "cellId"
     var contacts = [Contact]()
     var sortedContacts = [Contact]()
-
         
+    //MARK: ViewDidAppear / Load
+    
     override func viewDidAppear(_ animated: Bool) {
         fetchContacts()
         UIApplication.shared.applicationIconBadgeNumber = 0
@@ -28,8 +29,7 @@ class ContactsViewController: UITableViewController, SwipeTableViewCellDelegate 
         super.viewDidLoad()
 
         tableView.register(SwipeTableViewCell.self, forCellReuseIdentifier: cellId)
-        
-        
+                
         // if user not logged in
         if Auth.auth().currentUser == nil {
             // present login controller
@@ -48,7 +48,6 @@ class ContactsViewController: UITableViewController, SwipeTableViewCellDelegate 
     }
     
     //MARK: Firebase CRUD Functions
-    
     
     func updateContact(selectedContactId: String, selectedContactName: String) {
         
@@ -222,14 +221,11 @@ class ContactsViewController: UITableViewController, SwipeTableViewCellDelegate 
             content.title = "Daily Reminder (9pm)"
             content.body = "Add a note / contact"
             content.badge = 1
-//            UIApplication.shared.registerForRemoteNotifications()
-//            UIApplication.shared.applicationIconBadgeNumber = 1
             content.sound = UNNotificationSound.default
             
             var date = DateComponents()
             date.hour = 21
             date.minute = 0
-//            date.second = 50
             let calTrigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
 
             // choose a random identifier
@@ -239,8 +235,7 @@ class ContactsViewController: UITableViewController, SwipeTableViewCellDelegate 
             UNUserNotificationCenter.current().add(request)
         }))
         
-        
-        
+                
         alertController.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { (_) in
             do {
                 try Auth.auth().signOut()
@@ -271,11 +266,6 @@ class ContactsViewController: UITableViewController, SwipeTableViewCellDelegate 
         return cell
     }
     
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sortedContacts.count
-    }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let contactDetailController = ContactDetailController()
@@ -287,6 +277,10 @@ class ContactsViewController: UITableViewController, SwipeTableViewCellDelegate 
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return sortedContacts.count
     }
     
     //MARK: SwipeCellKit Methods
@@ -304,15 +298,8 @@ class ContactsViewController: UITableViewController, SwipeTableViewCellDelegate 
         let updateContactNameAction = SwipeAction(style: .default, title: "Update") { action, indexPath in
             let selectedPersonId = self.sortedContacts[indexPath.row].id
             let selectedPersonName = self.sortedContacts[indexPath.row].name
-//            self.deleteContact(selectedContact: selectedPersonId)
             self.updateContact(selectedContactId: selectedPersonId, selectedContactName: selectedPersonName)
-            
         }
-
         return [deleteAction, updateContactNameAction]
     }
-    
-
 }
-
-

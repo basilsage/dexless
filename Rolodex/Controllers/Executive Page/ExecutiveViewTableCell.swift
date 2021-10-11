@@ -11,11 +11,12 @@ import UIKit
 
 class ExecutiveViewTableCell: UITableViewCell {
 
+    //MARK: UI Elements
+    
     let nameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = UIColor.black
-        
         label.numberOfLines = 0
         label.textAlignment = .left
         return label
@@ -25,12 +26,12 @@ class ExecutiveViewTableCell: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 14)
         label.textColor = UIColor.rgb(red: 253, green: 118, blue:  67)
-        
         label.numberOfLines = 0
         label.textAlignment = .right
         return label
     }()
     
+    //MARK: Init Methods
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -47,7 +48,5 @@ class ExecutiveViewTableCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
     
 }

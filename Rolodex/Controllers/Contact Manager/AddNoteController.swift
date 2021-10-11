@@ -15,6 +15,22 @@ class AddNoteController: UIViewController {
     var selectedContact : Contact?
     var selectedDate = Date().timeIntervalSince1970
     
+    //MARK: UI Elements
+    
+    func setupNavigationButtons() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveNote))
+        navigationItem.rightBarButtonItem?.tintColor = .black
+    }
+    
+    let noteTextView: UITextView = {
+        let ntv = UITextView()
+        ntv.font = UIFont.systemFont(ofSize: 14)
+        ntv.backgroundColor = UIColor.white
+        ntv.becomeFirstResponder()
+        return ntv
+        
+    }()
+    
     let dateButton: UIButton = {
         
         let button = UIButton(type: .system)
@@ -27,6 +43,7 @@ class AddNoteController: UIViewController {
         return button
     }()
     
+    //MARK: Header Methods
     @objc func setDate() {
         
         let myDatePicker: UIDatePicker = UIDatePicker()
@@ -48,14 +65,19 @@ class AddNoteController: UIViewController {
         
     }
     
-    let noteTextView: UITextView = {
-        let ntv = UITextView()
-        ntv.font = UIFont.systemFont(ofSize: 14)
-        ntv.backgroundColor = UIColor.white
-        ntv.becomeFirstResponder()
-        return ntv
+    func updateDateButtonTitle() {
+
+        let nDate = NSDate(timeIntervalSince1970: selectedDate)
         
-    }()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        
+        let formattedDate = dateFormatter.string(from: nDate as Date)
+        dateButton.setTitle(formattedDate, for: .normal)
+    }
+    
+    //MARK: ViewDidLoad / Appear
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,38 +92,17 @@ class AddNoteController: UIViewController {
 
         updateDateButtonTitle()
         setupNavigationButtons()
-        
-        
+                
     }
     
-    func updateDateButtonTitle() {
-
-        let nDate = NSDate(timeIntervalSince1970: selectedDate)
-        
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
-        
-        let formattedDate = dateFormatter.string(from: nDate as Date)
-        dateButton.setTitle(formattedDate, for: .normal)
-    
-    }
-    
-    func setupNavigationButtons() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveNote))
-        navigationItem.rightBarButtonItem?.tintColor = .black
-        
-    }
-    
+    //MARK: Firebase Method
     @objc func saveNote() {
         guard let noteText = noteTextView.text else { return }
         guard let uid = Auth.auth().currentUser?.uid else { return }
         guard let selectedContactId = selectedContact?.id else {return}
-//
+
         let userNotesRef = Database.database().reference().child("contactsAdded").child(uid).child(selectedContactId).child("notes")
         let ref = userNotesRef.childByAutoId()
-//
             let values = ["noteText": noteText, "creationDate": selectedDate] as [String : Any]
 
             ref.updateChildValues(values) { (err, ref) in
@@ -110,13 +111,8 @@ class AddNoteController: UIViewController {
                     print("Failed to save post to DB", err)
                     return
                 }
-
                 print("Successfully saved post to DB")
             }
-            
         self.navigationController?.popViewController(animated: true)
     }
-
-
-
 }
