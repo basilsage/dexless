@@ -31,6 +31,8 @@ class NoteCell : SwipeTableViewCell {
     
     let dateLabel : UILabel = {
         let dateLabel = UILabel()
+        dateLabel.font = UIFont.systemFont(ofSize: 10)
+        dateLabel.textColor = UIColor.gray
         return dateLabel
     }()
     
@@ -46,9 +48,9 @@ class NoteCell : SwipeTableViewCell {
         addSubview(dateLabel)
         addSubview(noteText)
         
-        dateLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 10, paddingLeft: 15, paddingBottom: 0, paddingRight: 5, width: 0, height: 25)
+        dateLabel.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 10, paddingLeft: 17, paddingBottom: 0, paddingRight: 5, width: 0, height: 25)
         
-        noteText.anchor(top: dateLabel.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 5, paddingLeft: 15, paddingBottom: 5, paddingRight: 5, width: 0, height: 0)
+        noteText.anchor(top: dateLabel.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 5, paddingLeft: 17, paddingBottom: 15, paddingRight: 15, width: 0, height: 0)
         
     }
     

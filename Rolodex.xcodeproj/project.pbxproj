@@ -22,6 +22,7 @@
 		22BF6CD824401F160083DEE1 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF6CD724401F160083DEE1 /* NoteCell.swift */; };
 		22BF6CDA244039F80083DEE1 /* AddNoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF6CD9244039F80083DEE1 /* AddNoteController.swift */; };
 		22BF6CDC244047460083DEE1 /* EditNoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF6CDB244047460083DEE1 /* EditNoteController.swift */; };
+		87913F4926F2E8C10062C57E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87913F4826F2E8C10062C57E /* Task.swift */; };
 		879FFBE9266D5B5600A3AD7A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879FFBE8266D5B5600A3AD7A /* MainTabBarController.swift */; };
 		879FFBEC266D5C1900A3AD7A /* ExecutiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879FFBEB266D5C1900A3AD7A /* ExecutiveViewController.swift */; };
 		879FFBEE266DA07900A3AD7A /* RemindersHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879FFBED266DA07900A3AD7A /* RemindersHeader.swift */; };
@@ -51,6 +52,7 @@
 		2E292991FE57B9F427C1B393 /* Pods-Dexless.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dexless.debug.xcconfig"; path = "Target Support Files/Pods-Dexless/Pods-Dexless.debug.xcconfig"; sourceTree = "<group>"; };
 		3B4F8688BA610ACA784F254C /* Pods-Rolodex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rolodex.release.xcconfig"; path = "Target Support Files/Pods-Rolodex/Pods-Rolodex.release.xcconfig"; sourceTree = "<group>"; };
 		51CB327977E24985DAE66840 /* Pods_Dexless.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dexless.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		87913F4826F2E8C10062C57E /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		879FFBE8266D5B5600A3AD7A /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		879FFBEB266D5C1900A3AD7A /* ExecutiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutiveViewController.swift; sourceTree = "<group>"; };
 		879FFBED266DA07900A3AD7A /* RemindersHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersHeader.swift; sourceTree = "<group>"; };
@@ -95,21 +97,23 @@
 			children = (
 				22BF6CC12440057C0083DEE1 /* Info.plist */,
 				22BF6CC7244007360083DEE1 /* GoogleService-Info.plist */,
+				87913F4526F2E83D0062C57E /* Managers */,
 				22BF6CE024404B580083DEE1 /* Other */,
 				22BF6CDF24404B470083DEE1 /* Controllers */,
 				22BF6CDE24404B430083DEE1 /* View */,
-				22BF6CDD24404B3F0083DEE1 /* Model */,
+				22BF6CDD24404B3F0083DEE1 /* Models */,
 			);
 			path = Rolodex;
 			sourceTree = "<group>";
 		};
-		22BF6CDD24404B3F0083DEE1 /* Model */ = {
+		22BF6CDD24404B3F0083DEE1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				22BF6CC924400D730083DEE1 /* Contact.swift */,
 				22BF6CD3244015B90083DEE1 /* Note.swift */,
+				87913F4826F2E8C10062C57E /* Task.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		22BF6CDE24404B430083DEE1 /* View */ = {
@@ -174,6 +178,13 @@
 				884896D070576130B1FB0E5E /* Pods-Dexless.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		87913F4526F2E83D0062C57E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		879FFBEA266D5C0200A3AD7A /* Executive Page */ = {
@@ -315,6 +326,7 @@
 				22BF6CDA244039F80083DEE1 /* AddNoteController.swift in Sources */,
 				22BF6CD224400EFA0083DEE1 /* Extensions.swift in Sources */,
 				22BF6CB8244005790083DEE1 /* ContactsViewController.swift in Sources */,
+				87913F4926F2E8C10062C57E /* Task.swift in Sources */,
 				22BF6CD4244015B90083DEE1 /* Note.swift in Sources */,
 				22BF6CDC244047460083DEE1 /* EditNoteController.swift in Sources */,
 				87B157142665EBCF00BFC8F5 /* ActionFooter.swift in Sources */,
@@ -346,6 +358,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -393,7 +406,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -407,6 +420,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -448,7 +462,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

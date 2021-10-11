@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import SwipeCellKit
+import UserNotifications
 
 class ContactsViewController: UITableViewController, SwipeTableViewCellDelegate {
     
@@ -19,6 +20,7 @@ class ContactsViewController: UITableViewController, SwipeTableViewCellDelegate 
         
     override func viewDidAppear(_ animated: Bool) {
         fetchContacts()
+        UIApplication.shared.applicationIconBadgeNumber = 0
         self.navigationController?.isNavigationBarHidden = false
     }
     
@@ -201,6 +203,44 @@ class ContactsViewController: UITableViewController, SwipeTableViewCellDelegate 
     
     @objc func openSettings() {
         let alertController = UIAlertController(title: "Settings", message: "", preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "Allow notifications", style: .default, handler: { _ in
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+                if success {
+                    print("All set!")
+                } else if let error = error {
+                    print(error.localizedDescription)
+                }
+            }
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Snooze notification", style: .default, handler: { _ in
+            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Create daily notification", style: .default, handler: { _ in
+            let content = UNMutableNotificationContent()
+            content.title = "Daily Reminder (9pm)"
+            content.body = "Add a note / contact"
+            content.badge = 1
+//            UIApplication.shared.registerForRemoteNotifications()
+//            UIApplication.shared.applicationIconBadgeNumber = 1
+            content.sound = UNNotificationSound.default
+            
+            var date = DateComponents()
+            date.hour = 21
+            date.minute = 0
+//            date.second = 50
+            let calTrigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
+
+            // choose a random identifier
+            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: calTrigger)
+
+            // add our notification request
+            UNUserNotificationCenter.current().add(request)
+        }))
+        
+        
+        
         alertController.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { (_) in
             do {
                 try Auth.auth().signOut()

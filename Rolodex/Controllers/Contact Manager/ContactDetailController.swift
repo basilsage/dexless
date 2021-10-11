@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import SwipeCellKit
+import AVFoundation
 
 // instead of using "No reminder set" as the key or password, make a boolean value nextReminderSet
 
@@ -48,6 +49,7 @@ class ContactDetailController: UITableViewController, SwipeTableViewCellDelegate
         
         
 //        self.tableView.reloadData()
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
 
     }
     
@@ -165,6 +167,9 @@ class ContactDetailController: UITableViewController, SwipeTableViewCellDelegate
         
         tableView.register(NoteCell.self, forCellReuseIdentifier: cellId)
         tableView.register(RemindersHeader.self, forHeaderFooterViewReuseIdentifier: footerId)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 100
+
 
         setupNavigationButtons()
         
@@ -256,7 +261,7 @@ class ContactDetailController: UITableViewController, SwipeTableViewCellDelegate
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return UITableView.automaticDimension
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
