@@ -18,6 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         if FirebaseApp.app() == nil {
             FirebaseApp.configure()
+            Database.database().isPersistenceEnabled = true
         }
 
         guard let windowScene = (scene as? UIWindowScene) else { return }

@@ -28,13 +28,15 @@ class ContactDetailController: UITableViewController, SwipeTableViewCellDelegate
     }
     
     //MARK: ViewDidLoad / Appear
-    override func viewDidAppear(_ animated: Bool) {        
-        fetchReminder()
-        fetchNotes()
-    }
+//    override func viewDidAppear(_ animated: Bool) {        
+//        
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchReminder()
+        fetchNotes()
         
         navigationItem.title = selectedContact?.name
         self.navigationController?.navigationBar.tintColor = UIColor.black
@@ -44,6 +46,10 @@ class ContactDetailController: UITableViewController, SwipeTableViewCellDelegate
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 100
         setupNavigationButtons()
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:  #selector(fetchNotes), for: .valueChanged)
+        self.refreshControl = refreshControl
     }
     
     //MARK: Header Formatting / Actions
@@ -197,7 +203,7 @@ class ContactDetailController: UITableViewController, SwipeTableViewCellDelegate
     var notes = [Note]()
     var sortedNotes = [Note]()
     
-    func fetchNotes() {
+    @objc func fetchNotes() {
         
         // Don't allow row selections while notes fetching (else crashes)
         self.tableView.allowsSelection = false
@@ -234,6 +240,7 @@ class ContactDetailController: UITableViewController, SwipeTableViewCellDelegate
         }
         
         // re-enable row selections once notes finish fetching (else crashes)
+        refreshControl?.endRefreshing()
         self.tableView.allowsSelection = true
     }
 

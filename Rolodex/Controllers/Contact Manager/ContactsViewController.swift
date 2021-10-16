@@ -169,6 +169,8 @@ class ContactsViewController: UITableViewController, SwipeTableViewCellDelegate 
         // create reference to current user's record in Firebase
         guard let uid = Auth.auth().currentUser?.uid else { return }
         let ref = Database.database().reference().child("contactsAdded").child(uid)
+//        ref.keepSynced(true)
+
         
         // get a snapshot of all data associated with current user
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
