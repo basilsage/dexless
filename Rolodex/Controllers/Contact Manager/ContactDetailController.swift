@@ -215,28 +215,18 @@ class ContactDetailController: UITableViewController, SwipeTableViewCellDelegate
         guard let selectedContactId = selectedContact?.id else {return}
         
         let ref = Database.database().reference().child("contactsAdded").child(uid).child(selectedContactId).child("notes")
-        
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            guard let dictionaries = snapshot.value as? [String: Any] else {
-                // without this extra reload data, reminders don't load for Contacts with no notes saved. 
+        ref.observe(.childAdded) { (snapshot) in
+            guard let dictionary = snapshot.value as? [String: Any] else {
+                // without this extra reload data, reminders don't load for Contacts with no notes saved.
                 self.tableView.reloadData()
                 return
             }
 
-            dictionaries.forEach({ (key, value) in
-
-                guard let dictionary = value as? [String: Any] else { return }
-                
-                let note = Note(id: key, dictionary: dictionary)
+                let note = Note(id: snapshot.key, dictionary: dictionary)
                 self.notes.append(note)
                 self.sortedNotes = self.notes.sorted(by: { $0.creationDate > $1.creationDate })
-
-           })
             
             self.tableView.reloadData()
-
-        }) { (err) in
-            print("Failed to fetch notes:", err)
         }
         
         // re-enable row selections once notes finish fetching (else crashes)
